@@ -1,18 +1,10 @@
-export function btnSubir(){
-    window.onscroll = function() {
+export function btnSubir(btnSubir){
+    window.addEventListener("scroll", () =>{
         if (document.documentElement.scrollTop >=240){
-            document.querySelector(".btn-subir").style.display="block";
+            btnSubir.style.display="block";
         }else{
-            document.querySelector(".btn-subir").style.display="none";
+            btnSubir.style.display="none";
         }
-    }
-}
-
-export function pulsoSobreMi(sobreMi,h1SobreMi){
-    sobreMi.addEventListener("click",()=>{
-        h1SobreMi.classList.remove("pulso");
-        void h1SobreMi.offsetWidth;
-        h1SobreMi.classList.add("pulso");
     });
 }
 

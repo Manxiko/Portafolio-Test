@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 
-
 :root{
     --negro: #000000;
-    --negro-mate: #0f0f0f;
-    --negro-mate-suave: #1c1c1c;
+    --negro-mate-charcoal: #2c2c2c;
     --blanco: #ffffff;
     --blanco-mate: #ededed;
     --morado-mate: #3D2B56;
@@ -24,7 +22,7 @@ html{
 }
 
 body{
-    background: var(--negro-mate) url(../img/fondo.png);
+    background: var(--negro-mate-charcoal) url(../img/fondo.png);
     background-position: center;
     background-blend-mode: multiply;
     min-height: 100vh;
@@ -32,12 +30,12 @@ body{
     position: relative;
 }
 
+/* Header Main */
 .head-box{
     animation: arriba-abajo-header 800ms linear;
     margin: 2rem auto;
     width: 55rem;
 }
-
 
 .head-box nav{
     display: flex;
@@ -86,17 +84,25 @@ body{
     }
 }
 
+/* Main Main */
 main{
-    margin: 3rem 0;
+    overflow-x: hidden;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Informacion Personal Main */
 .info-personal-box{
     animation: apareciendo 1s linear both;
+    height: 100vh;
+    padding-bottom: 10rem;
+    position: relative;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 50rem;
 }
 
 @keyframes apareciendo{
@@ -110,20 +116,49 @@ main{
     }
 }
 
+.skills-pulso{
+    animation: pulso-skills 1.5s linear infinite 1s both;
+    color: var(--blanco-mate);
+    font-size: 2.3rem;
+    font-weight: bold;
+    width: 8.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 90rem;
+}
+
+.info-personal-box .skills-pulso i{
+    color: var(--blanco-mate);
+    font-size: 2.3rem;
+}
+
+@keyframes pulso-skills{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(20%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
 .avatar-nombre{
-    padding: 5rem 0;
+    padding: 24rem 0;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .avatar-nombre img{
     border-radius: 50%;
     height: 30rem;
 }
-
 
 .info-personal-box .avatar-nombre p{
     background: var(--morado-mate);
@@ -164,11 +199,8 @@ main{
 }
 
 .skills-box{
-    animation: apareciendo 1s linear both;
-    margin-top: 20rem;
-    overflow: hidden;
+    width: 100%;
 }
-
 
 .skills-box h2{
     color: var(--blanco-mate);
@@ -188,13 +220,12 @@ main{
 }
 
 .mov-box{
-    margin-top: 2rem;
     padding: 2rem 0;
-    width: 500%;
+    width: 300%;
 }
 
 .slider-box{
-    animation: mover-skills 50s linear infinite alternate both;
+    animation: mover-skills 30s linear infinite alternate both;
     display: flex;
     justify-content: space-between;
     &.slider-box:hover{
@@ -207,14 +238,13 @@ main{
     height: 10rem;
 }
 
-
 @keyframes mover-skills{
     from{
         transform: translateX(8%);
     }
 
     to{
-        transform: translateX(-85%);
+        transform: translateX(-70%);
     }
 }
 
@@ -225,11 +255,11 @@ main{
     box-shadow: 0 0 1.5rem var(--blanco);
     display: none;
     padding: 2rem;
+    height: 3rem;
+    width: 3rem;
     position: fixed;
     bottom: 3rem;
     right: 2rem;
-    height: 3rem;
-    width: 3rem;
 }
 
 .btn-subir img{
@@ -263,7 +293,10 @@ main{
 
 
 .contacto-cont{
-    margin-top: 20rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .contacto-cont h2{
@@ -285,7 +318,6 @@ main{
 
 .contacto-box{
     height: 20rem;
-    margin-top: 2rem;
 }
 
 .contacto-box p{
@@ -329,6 +361,7 @@ main{
 }
 
 .links-redes a{
+    animation: pulso-corazon 3s linear infinite both;
     color: var(--blanco-mate);
     text-decoration: none;
 }
@@ -340,17 +373,16 @@ main{
     width: 65%;
 }
 
+.links-redes i{
+    font-size: 3rem;
+}
+
 .gmail span{
     font-size: 2rem;
     color: var(--blanco-mate);
 }
 
-.links-redes i{
-    font-size: 3rem;
-}
-
-.links-redes img{
+.gmail img{
     height: 3rem;
     width: 3rem;
 }
-

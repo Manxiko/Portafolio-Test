@@ -1,11 +1,8 @@
 import * as variables from "./variables.js";
 import * as funciones from "./funciones.js";
 
-funciones.btnSubir();
-
-const sobreMi = variables.sobreMi;
-const h1SobreMi = variables.h1SobreMi;
-funciones.pulsoSobreMi(sobreMi,h1SobreMi);
+const btnSubir = variables.btnSubir;
+funciones.btnSubir(btnSubir);
 
 const skills = variables.skills;
 const h2Skills = variables.h2Skills;
